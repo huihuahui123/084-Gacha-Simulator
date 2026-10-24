@@ -5,9 +5,15 @@ Your browser does not support the canvas tag.</canvas><noscript>Your browser doe
 The following features required to run Godot projects on the Web are missing:
 `;r(e+c.join(`
 `))}else s("progress"),engine.startGame({onProgress:function(e,n){e>0&&n>0?(t.value=e,t.max=n):(t.removeAttribute("value"),t.removeAttribute("max"))}}).then(()=>{s("hidden")},r)})()</script>
-	<!-- 不蒜子访问统计 -->
-	<script src="//cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
+	<!-- 访问统计（abacus 免费计数） -->
 	<div id="site-stats" style="position:fixed;right:10px;bottom:10px;z-index:9999;color:#fff;background:rgba(0,0,0,.5);padding:6px 12px;border-radius:6px;font-size:12px;line-height:1.8;pointer-events:none;text-align:right;">
-		今日访问 <span id="busuanzi_today_pv">-</span> 次 · 今日访客 <span id="busuanzi_today_uv">-</span> 人<br>
-		总访问 <span id="busuanzi_site_pv">-</span> 次 · 总访客 <span id="busuanzi_site_uv">-</span> 人
+		今日访问 <span id="stat_today">-</span> 次 · 总访问 <span id="stat_total">-</span> 次
 	</div>
+	<script>
+	(function(){
+		var base = 'https://abacus.jasoncameron.dev/hit/084-gacha-simulator/';
+		var day = new Date().toISOString().slice(0,10);
+		fetch(base + 'total').then(function(r){return r.json()}).then(function(d){document.getElementById('stat_total').textContent = d.value}).catch(function(){});
+		fetch(base + 'day-' + day).then(function(r){return r.json()}).then(function(d){document.getElementById('stat_today').textContent = d.value}).catch(function(){});
+	})();
+	</script>
