@@ -7,3 +7,17 @@ html/
 
 # 打包产物
 *.zip
+
+# 已迁移到腾讯云 COS 的大文件（不再随仓库推送）
+game.pck
+game.wasm
+
+# 部署临时目录
+dist/
+dist-test/
+
+# Tencent Cloud EdgeOne
+.env
+.edgeone/*
+.tef_dist/*
+  
