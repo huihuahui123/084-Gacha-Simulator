@@ -8,6 +8,10 @@ html/
 # 打包产物
 *.zip
 
+# 已迁移到 Cloudflare R2 的大文件（不随仓库推送）
+game.pck
+game.wasm
+
 # 部署临时目录
 dist/
 dist-test/
