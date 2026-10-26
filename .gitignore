@@ -16,6 +16,9 @@ game.wasm
 dist/
 dist-test/
 
+# wrangler 本地缓存
+.wrangler/
+
 # Tencent Cloud EdgeOne
 .env
 .edgeone/*
